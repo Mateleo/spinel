@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        "dmserif": ["DM Serif Display", "serif"],
+        "dm": ["DM Sans", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
