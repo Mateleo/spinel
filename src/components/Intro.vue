@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ProductList from './ProductList.vue';
 </script>
 
 <template>
@@ -22,6 +23,7 @@
         <span class="font-semibold underline decoration-green-500">Homemade</span>
          script for Chocolatey. Ninite on steroids
       </p>
+          <ProductList/>
     </div>
   </div>
 </template>
