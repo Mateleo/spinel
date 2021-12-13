@@ -9,7 +9,7 @@ interface software {
 
 export const useStore = defineStore("main",{
     state:()=>({
-        softwareList: [{name:"VS Code",id:0,logo:"VSCODE.svg",selected:false}] as software[]
+        softwareList: [{name:"TEST",id:0,logo:"VSCODE.svg",selected:false}] as software[]
     }),
     getters:{
         getSoftwareList(state){
@@ -21,5 +21,11 @@ export const useStore = defineStore("main",{
 
     },
     actions:{
+        lorem(x:number){
+            for(let i=0;i<x;i++){
+                this.softwareList.push({name:"TEST",id:i,logo:"VSCODE.svg",selected:false})
+            }
+
+        }
     }
 })

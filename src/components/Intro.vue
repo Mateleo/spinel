@@ -23,7 +23,7 @@ import ProductList from './ProductList.vue';
         <span class="font-semibold underline decoration-green-500">Homemade</span>
          script for Chocolatey. Ninite on steroids
       </p>
-          <ProductList/>
+          <ProductList class="mt-5"/>
     </div>
   </div>
 </template>

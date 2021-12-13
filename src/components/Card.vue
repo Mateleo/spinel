@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 interface soft {
   name: String;
   id: number;
@@ -10,12 +12,15 @@ const props = defineProps({
   software: {} as () => soft,
 });
 
-// console.log(software)
+let selection = ref(false);
 </script>
 
 <template>
   <div
+    @click="selection = !selection"
+    :class="[selection ? ['outline outline-4 outline-amber-400'] : ['']]"
     class="
+      group
       flex-col
       bg-gradient-to-t
       from-[#0F2027]/90
@@ -24,9 +29,22 @@ const props = defineProps({
       backdrop-filter backdrop-blur-3xl
       rounded-xl
       p-4
+      hover:from-white/60 hover:to-white/20
+      max-w-[110px]
+      w-full
     "
   >
     <img :src="'../src/assets/'+ props.software!.logo" />
-    <h1 class="font-dm text-xl text-center text-white">{{props.software!.name}}</h1>
+    <h1
+      class="
+        font-dm
+        text-xl
+        leading-6
+        text-center text-white
+        group-hover:text-black
+      "
+    >
+      {{props.software!.name}}
+    </h1>
   </div>
 </template>
