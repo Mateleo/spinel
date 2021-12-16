@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ProductList from './ProductList.vue';
+import Footer from './Footer.vue';
 </script>
 
 <template>
@@ -24,6 +25,7 @@ import ProductList from './ProductList.vue';
          script for Chocolatey. Ninite on steroids
       </p>
           <ProductList class="mt-5"/>
+          <Footer class="mt-5"/>
     </div>
   </div>
 </template>

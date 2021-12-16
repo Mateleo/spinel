@@ -3,7 +3,7 @@ import { useStore } from "../store/store";
 import Card from "./Card.vue";
 
 const main = useStore();
-main.lorem(20)
+// main.lorem(20)
 console.log(main.getSoftwareList)
 </script>
 
