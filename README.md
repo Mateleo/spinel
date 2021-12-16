@@ -9,7 +9,7 @@ Fonts are provided using the Google Font API
 
 ## Exemple - Alpha
 
-![Alt](src\assets\alpha.png "exemple spinel, alpha stage")
+![Alt](https://github.com/Mateleo/spinel/blob/master/src/assets/alpha.png "exemple spinel, alpha stage")
 
 ## Roadmap
 
