@@ -23,7 +23,7 @@ export const useStore = defineStore("main",{
     actions:{
         lorem(x:number){
             for(let i=0;i<x;i++){
-                this.softwareList.push({name:"TEST",id:i,logo:"VSCODE.svg",selected:false})
+                this.softwareList.length<x ? this.softwareList.push({name:"TEST",id:i,logo:"VSCODE.svg",selected:false}) : ""
             }
 
         }
