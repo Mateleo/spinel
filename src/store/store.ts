@@ -17,6 +17,9 @@ export const useStore = defineStore("main",{
         },
         getSelected(state){
             return state.softwareList.filter((softwareList) => softwareList.selected===true);
+        },
+        getScript(){
+            return this.getSelected
         }
 
     },

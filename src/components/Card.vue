@@ -12,13 +12,12 @@ const props = defineProps({
   software: {} as () => soft,
 });
 
-let selection = ref(false);
 </script>
 
 <template>
   <div
-    @click="selection = !selection"
-    :class="[selection ? ['outline outline-4 outline-amber-400'] : ['']]"
+    @click="props.software!.selected = !props.software!.selected"
+    :class="[props.software!.selected ? ['outline outline-4 outline-amber-400'] : ['']]"
     class="
       group
       flex-col
