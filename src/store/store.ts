@@ -21,7 +21,7 @@ export const useStore = defineStore("main",{
         getScript(){
             let select = this.getSelected
             if(select.length===0){
-                return false
+                return ""
             }
             let script = "choco install "
             for(let x=0;x<select.length;x++){
