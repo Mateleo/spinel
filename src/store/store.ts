@@ -19,7 +19,16 @@ export const useStore = defineStore("main",{
             return state.softwareList.filter((softwareList) => softwareList.selected===true);
         },
         getScript(){
-            return this.getSelected
+            let select = this.getSelected
+            if(select.length===0){
+                return false
+            }
+            let script = "choco install "
+            for(let x=0;x<select.length;x++){
+                script = script + select[x].name +" "
+
+            }
+            return script+" -y"
         }
 
     },

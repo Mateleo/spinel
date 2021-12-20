@@ -10,8 +10,7 @@ import Generate from "./components/Generate.vue";
 <template>
   <div
     class="
-    flex
-    flex-col
+      flex flex-col
       mx-auto
       bg-white
       shadow-2xl
@@ -24,7 +23,7 @@ import Generate from "./components/Generate.vue";
   >
     <Intro />
     <ProductList class="my-5" />
-    <Generate/>
+    <Generate class="relative" />
     <Footer class="mt-5" />
   </div>
 </template>

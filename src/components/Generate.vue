@@ -1,12 +1,31 @@
 <script setup lang="ts">
+import { useToast } from "vue-toastification";
 import { useStore } from "../store/store";
 
 const store = useStore();
+const toast = useToast();
 
-function test(){
-  console.log(store.getSelected)
+function test() {
+  if (!store.getScript) {
+    toast.error("Please select an item!", {
+      // @ts-ignore
+      position: "top-center", 
+      timeout: 3000,
+      closeOnClick: true,
+      pauseOnFocusLoss: false,
+      pauseOnHover: false,
+      draggable: true,
+      draggablePercent: 0.6,
+      showCloseButtonOnHover: false,
+      hideProgressBar: false,
+      closeButton: "button",
+      icon: true,
+      rtl: false,
+    });
+  } else {
+    console.log(store.getScript);
+  }
 }
-
 </script>
 
 <template>
