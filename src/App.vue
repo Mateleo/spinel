@@ -5,6 +5,7 @@ import Footer from "./components/Footer.vue";
 import Intro from "./components/Intro.vue";
 import ProductList from "./components/ProductList.vue";
 import Generate from "./components/Generate.vue";
+import Category from "./components/Category.vue";
 </script>
 
 <template>
