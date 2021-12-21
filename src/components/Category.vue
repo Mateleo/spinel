@@ -15,7 +15,7 @@ const props = defineProps({
         justify-items-stretch -->
 
 <template>
-  <div class="shadow-xl p-3 rounded-md bg-white/10">
+  <div class="shadow-xl p-3 rounded-xl bg-white/10">
     <h2 class="font-dm text-lg">{{ props.category }}</h2>
     <div class="flex flex-wrap">
       <div class="p-2" v-for="(software, index) in main.getByCategory(props.category)">

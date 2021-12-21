@@ -28,8 +28,8 @@ function test() {
     });
     display.value = false;
   } else {
-    staticText.value = store.getScript;
-    console.log(store.getScript);
+    staticText.value = store.getScript.replaceAll(';',';\n');
+    console.log(staticText.value);
     display.value = true;
   }
 }
@@ -74,6 +74,7 @@ function test() {
             text-sm
             p-5
             rounded-b-md
+            whitespace-pre-line
           "
         >
           {{ staticText }}
