@@ -47,7 +47,7 @@ export const useStore = defineStore("main", {
       return (cat: string | undefined) =>
         state.softwareList.filter(
           (softwareList) => softwareList.category === cat
-        );
+        ).sort((a,b) => a.id - b.id);
     },
     getScript() {
       let select = this.getSelected;
