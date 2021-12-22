@@ -110,5 +110,47 @@
         "logo": "PLEX.svg",
         "selected": false,
         "category": "Media"
+    },
+    {
+        "name": "Steam",
+        "id": 16,
+        "logo": "STEAM.svg",
+        "selected": false,
+        "category": "Games"
+    },
+    {
+        "name": "Epic Games Store",
+        "id": 17,
+        "logo": "EPIC.svg",
+        "selected": false,
+        "category": "Games"
+    },
+    {
+        "name": "Gog Galaxy",
+        "id": 18,
+        "logo": "GOG.svg",
+        "selected": false,
+        "category": "Games"
+    },
+    {
+        "name": "Paint.net",
+        "id": 19,
+        "logo": "PAINT.png",
+        "selected": false,
+        "category": "Image"
+    },
+    {
+        "name": "GIMP",
+        "id": 20,
+        "logo": "GIMP.svg",
+        "selected": false,
+        "category": "Image"
+    },
+    {
+        "name": "ImageGlass",
+        "id": 21,
+        "logo": "IGLASS.svg",
+        "selected": false,
+        "category": "Image"
     }
 ]
