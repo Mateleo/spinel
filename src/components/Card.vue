@@ -46,8 +46,8 @@ props.software!.name.length>=8 ? size.value = false : size.value = true
         class="max-w-[44px] aspect-square m-auto"
         :src="'../src/assets/'+ props.software!.logo"
       />
-      <h1 :class="[size ? ['text-lg'] : ['text-sm']]"
-        class="font-dm text-center text-white group-hover:text-black"
+      <h1 :class="[size ? ['text-lg'] : [`text-[14.5px]`]]"
+        class=" align-baseline font-dm text-center text-white group-hover:text-black leading-none mt-[5px]"
       >
         {{props.software!.name}}
       </h1>

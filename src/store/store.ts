@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import json from "../../software.json"
 
 interface software {
   name: String;
@@ -18,36 +19,7 @@ interface software {
 
 export const useStore = defineStore("main", {
   state: () => ({
-    softwareList: [
-      {
-        name: "TEST",
-        id: 0,
-        logo: "VSCODE.svg",
-        selected: false,
-        category: "Web",
-      },
-      {
-        name: "Google Chrome",
-        id: 1,
-        logo: "GCHROME.svg",
-        selected: false,
-        category: "Web",
-      },
-      {
-        name: "Firefox",
-        id: 2,
-        logo: "FIREFOX.svg",
-        selected: false,
-        category: "Web",
-      },
-      {
-        name: "Brave",
-        id: 0,
-        logo: "BRAVE.svg",
-        selected: false,
-        category: "Web",
-      },
-    ] as software[],
+    softwareList: json as software[],
     category: 8,
   }),
   getters: {

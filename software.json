@@ -1,0 +1,58 @@
+[{
+    "name": "TEST",
+    "id": 0,
+    "logo": "VSCODE.svg",
+    "selected": false,
+    "category": "Web"
+  },
+  {
+    "name": "Google Chrome",
+    "id": 1,
+    "logo": "GCHROME.svg",
+    "selected": false,
+    "category": "Web"
+  },
+  {
+    "name": "Firefox",
+    "id": 2,
+    "logo": "FIREFOX.svg",
+    "selected": false,
+    "category": "Web"
+  },
+  {
+    "name": "Brave",
+    "id": 3,
+    "logo": "BRAVE.svg",
+    "selected": false,
+    "category": "Web"
+  },
+  {
+    "name": "Discord",
+    "id": 4,
+    "logo": "DISCORD.svg",
+    "selected": false,
+    "category": "Messaging"
+  },
+  {
+    "name": "Signal",
+    "id": 5,
+    "logo": "SIGNAL.svg",
+    "selected": false,
+    "category": "Messaging"
+  },
+  {
+    "name": "Telegram",
+    "id": 6,
+    "logo": "TELEGRAM.svg",
+    "selected": false,
+    "category": "Messaging"
+  },
+  {
+    "name": "WhatsApp",
+    "id": 7,
+    "logo": "WHATSAPP.svg",
+    "selected": false,
+    "category": "Messaging"
+  }
+
+]
