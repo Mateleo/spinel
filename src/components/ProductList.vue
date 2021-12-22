@@ -3,7 +3,7 @@ import { useStore } from "../store/store";
 import Category from "./Category.vue";
 
 const main = useStore();
-main.lorem(50)
+main.lorem(40)
 console.log(main.getSoftwareList)
 </script>
 
