@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+
 interface soft {
   name: String;
   id: number;
@@ -15,9 +16,11 @@ const props = defineProps({
   software: {} as () => soft,
 });
 
-
 props.software!.name.length>=8 ? size.value = false : size.value = true
 
+function getImageeUrl(logo:String){
+  return new URL(`../../src/assets/${logo}`, import.meta.url).href
+}
 
 
 </script>
@@ -44,7 +47,7 @@ props.software!.name.length>=8 ? size.value = false : size.value = true
     <div class="">
       <img
         class="max-w-[44px] aspect-square m-auto"
-        :src="'../src/assets/'+ props.software!.logo"
+        :src="getImageeUrl(props.software!.logo)"
       />
       <h1 :class="[size ? ['text-lg'] : [`text-[14.5px]`]]"
         class=" font-dm text-center text-white group-hover:text-black leading-none mt-[5px]"
