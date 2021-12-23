@@ -1,12 +1,5 @@
 [
     {
-        "name": "TEST",
-        "id": 0,
-        "logo": "VSCODE.svg",
-        "selected": false,
-        "category": "Web"
-    },
-    {
         "name": "Google Chrome",
         "id": 1,
         "logo": "GCHROME.svg",
@@ -152,5 +145,40 @@
         "logo": "IGLASS.svg",
         "selected": false,
         "category": "Image"
+    },
+    {
+        "name": "WinRar",
+        "id": 22,
+        "logo": "WINRAR.png",
+        "selected": false,
+        "category": "Compression"
+    },
+    {
+        "name": "7Zip",
+        "id": 23,
+        "logo": "7ZIP.svg",
+        "selected": false,
+        "category": "Compression"
+    },
+    {
+        "name": "qBittorent",
+        "id": 24,
+        "logo": "QBITT.svg",
+        "selected": false,
+        "category": "Other"
+    },
+    {
+        "name": "TreeSize",
+        "id": 25,
+        "logo": "TREESIZE.png",
+        "selected": false,
+        "category": "Other"
+    },
+    {
+        "name": "Bleachbit",
+        "id": 26,
+        "logo": "BLEACHBIT.svg",
+        "selected": false,
+        "category": "Other"
     }
 ]

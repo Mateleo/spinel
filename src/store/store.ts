@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import json from "../../software.json"
+import json from "../../software.json";
 
 interface software {
   name: String;
@@ -31,8 +31,8 @@ export const useStore = defineStore("main", {
         "Media",
         "Games",
         "Image",
-        "Other",
         "Compression",
+        "Other",
       ];
     },
     getSoftwareList(state) {
@@ -45,9 +45,9 @@ export const useStore = defineStore("main", {
     },
     getByCategory(state) {
       return (cat: string | undefined) =>
-        state.softwareList.filter(
-          (softwareList) => softwareList.category === cat
-        ).sort((a,b) => a.id - b.id);
+        state.softwareList
+          .filter((softwareList) => softwareList.category === cat)
+          .sort((a, b) => a.id - b.id);
     },
     getScript() {
       let select = this.getSelected;
@@ -55,11 +55,11 @@ export const useStore = defineStore("main", {
         return "";
       }
       let script =
-        "Set-ExecutionPolicy AllSigned;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));choco install ";
+        "Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));choco install ";
       for (let x = 0; x < select.length; x++) {
-        script = script + select[x].name + " ";
+        script = script + select[x].name.replaceAll(' ', '').toLowerCase() + " ";
       }
-      return script + " -y";
+      return script + " -y;";
     },
   },
   actions: {
