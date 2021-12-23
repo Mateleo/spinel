@@ -4,10 +4,10 @@ Spinel is a script generator for chocolatey. The goal is to provide a beautiful 
 
 ## Technologies Used
 
-The entire website is enterely build with `Vue 3` using `Vite`.
-`Pinia` for Store Management
-`Tailwind CSS` for styling
-[vue-toastification](https://github.com/Maronato/vue-toastification)
+The entire website is enterely build with `Vue 3` using `Vite`.  
+`Pinia` for Store Management  
+`Tailwind CSS` for styling  
+[vue-toastification](https://github.com/Maronato/vue-toastification)  
 Fonts are provided using the `Google Font API`
 
 ## Exemple - Beta
