@@ -25,7 +25,8 @@ import Embed from "./assets/spinel.jpeg"
       xs:max-w-[90%]
       s:max-w-[85%]
 
-      p-6
+      p-4
+      s:p-6
     "
   >
     <Intro />
