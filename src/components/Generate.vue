@@ -72,9 +72,11 @@ function test() {
             font-dm font-light
             italic
             text-sm
+            md:text-sm
             p-5
             rounded-b-md
             whitespace-pre-line
+            break-words
           "
         >
           {{ staticText }}
