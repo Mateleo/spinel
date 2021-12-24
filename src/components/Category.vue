@@ -18,7 +18,7 @@ const props = defineProps({
   <div class="shadow-xl p-3 rounded-xl bg-white/10">
     <h2 class="font-dm text-lg">{{ props.category }}</h2>
     <div class="flex flex-wrap">
-      <div class="p-1" v-for="(software, index) in main.getByCategory(props.category)">
+      <div class="p-2" v-for="(software, index) in main.getByCategory(props.category)">
         <Card :software="software" />
       </div>
     </div>

@@ -9,17 +9,24 @@ interface soft {
   selected: boolean;
 }
 
-let size = ref(true);
+let size = ref();
 
 
 const props = defineProps({
   software: {} as () => soft,
 });
 
-props.software!.name.length>=8 ? size.value = false : size.value = true
+size.value = Math.max(...props.software!.name.split(' ').map(item => item.length))
+
+console.log(props.software!.name+ " " +size.value)
+
 
 function getImageeUrl(logo:String){
   return new URL(`../../src/assets/${logo}`, import.meta.url).href
+}
+
+function getImageAlt(name:String){
+  return name + " logo"
 }
 
 
@@ -40,17 +47,17 @@ function getImageeUrl(logo:String){
       backdrop-filter backdrop-blur-3xl
       rounded-xl
       hover:from-white/60 hover:to-white/20
-      w-[77px]
-      h-[100px]
+      w-[88px]
+      h-[115px]
     "
   >
     <div class="">
       <img
         class="max-w-[44px] aspect-square m-auto"
-        :src="getImageeUrl(props.software!.logo)"
+        :src="getImageeUrl(props.software!.logo)" :alt="getImageAlt(props.software!.name)"
       />
-      <h1 :class="[size ? ['text-lg'] : [`text-[14.5px]`]]"
-        class=" font-dm text-center text-white group-hover:text-black leading-none mt-[5px]"
+      <h1 :class="[size<=7 && props.software!.name.length<=15 ? ['text-lg'] : [`text-[15px] mt-[14px]`]]"
+        class=" font-dm text-center text-white group-hover:text-black leading-none mt-[11px]"
       >
         {{props.software!.name}}
       </h1>
