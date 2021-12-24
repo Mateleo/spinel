@@ -6,6 +6,9 @@ import Intro from "./components/Intro.vue";
 import ProductList from "./components/ProductList.vue";
 import Generate from "./components/Generate.vue";
 import Embed from "./assets/spinel.jpeg"
+
+
+
 </script>
 
 <template>
@@ -18,7 +21,10 @@ import Embed from "./assets/spinel.jpeg"
       bg-opacity-20
       backdrop-filter backdrop-blur-3xl
       rounded-3xl
-      max-w-[80%]
+      max-w-[95%]
+      xs:max-w-[90%]
+      s:max-w-[85%]
+
       p-6
     "
   >
