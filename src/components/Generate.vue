@@ -8,6 +8,9 @@ const toast = useToast();
 
 let display = ref(false);
 let staticText = ref("");
+function copy() {
+  navigator.clipboard.writeText(staticText.value);
+}
 
 function test() {
   if (!store.getScript) {
@@ -28,7 +31,7 @@ function test() {
     });
     display.value = false;
   } else {
-    staticText.value = store.getScript.replaceAll(';',';\n');
+    staticText.value = store.getScript.replaceAll(";", ";\n");
     console.log(staticText.value);
     display.value = true;
   }
@@ -63,8 +66,24 @@ function test() {
       GENERATE
     </button>
     <transition name="fade">
-      <div v-if="display" class="shadow-lg mt-4">
+      <div v-if="display" class="shadow-lg mt-4 flex-col">
         <div class="bg-green-600 p-1 rounded-t-md"></div>
+        <div class="flex float-right flex-row-reverse items-center">
+          <button
+            @click="copy"
+            class="
+              bg-gray-400
+              m-2
+              p-2
+              rounded-md
+              hover:bg-gray-300
+              border-2 border-white
+              focus:border-green-700 focus:outline-none
+            "
+          >
+            <img class="w-[20px]" src="../assets/clipboard.svg" alt="copy icon" />
+          </button>
+        </div>
         <p
           class="
             bg-gray-900
@@ -87,7 +106,7 @@ function test() {
 </template>
 
 <style>
-.fade-enter-active{
+.fade-enter-active {
   transition: opacity 0.8s ease;
 }
 
