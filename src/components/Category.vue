@@ -8,12 +8,6 @@ const props = defineProps({
   category: String,
 });
 </script>
-<!-- 
-        grid grid-cols-2
-        sm:grid-cols-3
-        gap-7
-        justify-items-stretch -->
-
 <template>
   <div class="shadow-xl p-3 rounded-xl bg-white/10">
     <h2 class="font-dm text-lg">{{ props.category }}</h2>
