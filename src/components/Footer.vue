@@ -9,7 +9,9 @@
       <router-link to="/legal">Legal</router-link> |
       <router-link to="/credits">Credits and attributions</router-link>
     </p>
+    <div class="text-right">
     <a href="https://github.com/Mateleo/spinel" class="text-right">Github</a>
+    </div>
   </div>
   <div>
     <p class="text-base font-dm text-center sm:hidden">
