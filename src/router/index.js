@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import Legal from '../components/Legal.vue'
 import Credits from '../components/Credits.vue'
+import NotFound from '../components/NotFound.vue'
+
 const routes = [
     {
         path: '/',
@@ -21,8 +23,8 @@ const routes = [
     },
     {
         path:'/:pathMatch(.*)*',
-        name: 'navguard',
-        component: Home
+        name: 'NotFound',
+        component: NotFound
     }
     
 ]
