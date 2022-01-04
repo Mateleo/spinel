@@ -21,6 +21,7 @@ export const useStore = defineStore("main", {
   state: () => ({
     softwareList: json as software[],
     category: 8,
+    search : "",
   }),
   getters: {
     getCategory() {
@@ -48,6 +49,15 @@ export const useStore = defineStore("main", {
         state.softwareList
           .filter((softwareList) => softwareList.category === cat)
           .sort((a, b) => a.id - b.id);
+    },
+    getByCategorySearch(state){
+      let regex = new RegExp(state.search,"gim")
+      state.search.length===0 ? regex = /./gim : "";
+      return (cat: string | undefined) =>
+      state.softwareList
+        .filter((softwareList) => softwareList.category === cat)
+        .filter((softwareList) => softwareList.name.match(regex))
+        .sort((a, b) => a.id - b.id);
     },
     getScript() {
       let select = this.getSelected;
@@ -102,5 +112,8 @@ export const useStore = defineStore("main", {
           : "";
       }
     },
+    setSearch(word:string|undefined){
+      word == undefined ? this.search="" : this.search = word
+    }
   },
 });

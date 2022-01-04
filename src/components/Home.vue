@@ -8,14 +8,12 @@ import Generate from "./Generate.vue";
 </script>
 
 <template>
-    <div
-      class="flex flex-col mx-auto bg-white shadow-2xl bg-opacity-20 backdrop-filter backdrop-blur-3xl rounded-3xl max-w-[95%] xs:max-w-[90%] s:max-w-[85%] p-4 s:p-6"
-    >
-      <Intro />
-      <ProductList class="my-5" />
-      <Generate class="relative" />
-      <Footer/>
-    </div>
+  <div
+    class="flex flex-col mx-auto bg-white shadow-2xl bg-opacity-20 backdrop-filter backdrop-blur-3xl rounded-3xl max-w-[95%] xs:max-w-[90%] s:max-w-[85%] p-4 s:p-6"
+  >
+    <Intro />
+    <div class="my-10"><ProductList /></div>
+    <Generate class="relative" />
+    <Footer />
+  </div>
 </template>
-
-

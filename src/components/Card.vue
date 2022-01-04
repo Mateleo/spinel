@@ -18,7 +18,7 @@ const props = defineProps({
 
 size.value = Math.max(...props.software!.name.split(' ').map(item => item.length))
 
-console.log(props.software!.name+ " " +size.value)
+// console.log(props.software!.name+ " " +size.value)
 
 
 function getImageeUrl(logo:String){
