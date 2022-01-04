@@ -18,7 +18,7 @@ function test() {
 <template>
   <div class="w-full flex justify-center sm:justify-end">
     <input
-      class="w-full sm:w-[35%] bg-white shadow-2xl bg-opacity-30 backdrop-filter backdrop-blur-3xl rounded-md py-2 px-2 text-sm font-dm placeholder:italic placeholder:text-black/50 placeholder:text-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2"
+      class="w-full sm:w-[35%] bg-white shadow-2xl bg-opacity-50 backdrop-filter backdrop-blur-3xl rounded-md py-2 px-2 text-sm font-dm placeholder:italic placeholder:text-black/50 placeholder:text-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2"
       type="text"
       placeholder="Search an item"
       v-model="message"

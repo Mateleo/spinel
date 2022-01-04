@@ -5,7 +5,7 @@
   <div class="hidden sm:grid sm:grid-cols-4 font-dm text-base">
     <p>beta version</p>
     <p class="text-center col-span-2">
-      &copy; 2022 <router-link to="/">Spinel.ovh</router-link> All rights reserved |
+      &copy; 2022 <router-link to="/">Spinel.ovh</router-link> | All rights reserved |
       <router-link to="/legal">Legal</router-link> |
       <router-link to="/credits">Credits and attributions</router-link>
     </p>
