@@ -51,7 +51,7 @@ function getImageAlt(name:String){
       h-[115px]
     "
   >
-    <div class="">
+    <a href="">
       <img
         class="max-w-[44px] aspect-square m-auto"
         :src="getImageeUrl(props.software!.logo)" :alt="getImageAlt(props.software!.name)"
@@ -61,7 +61,7 @@ function getImageAlt(name:String){
       >
         {{props.software!.name}}
       </h1>
-    </div>
+    </a>
   </div>
 </template>
 

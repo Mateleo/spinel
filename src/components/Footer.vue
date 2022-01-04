@@ -2,7 +2,7 @@
 
 <template>
 <div class="mt-6 mb-0">
-  <div class="hidden sm:grid sm:grid-cols-4 font-dm text-sm">
+  <div class="hidden sm:grid sm:grid-cols-4 font-dm text-base">
     <p>beta version</p>
     <p class="text-center col-span-2">
       &copy; 2022 <router-link to="/">Spinel.ovh</router-link> All rights reserved |
@@ -12,7 +12,7 @@
     <a href="https://github.com/Mateleo/spinel" class="text-right">Github</a>
   </div>
   <div>
-    <p class="text-sm font-dm text-center sm:hidden">
+    <p class="text-base font-dm text-center sm:hidden">
       beta version | &copy; 2022 <router-link to="/">Spinel.ovh</router-link> |
       <router-link to="/legal">Legal</router-link> |
       <router-link to="/credits">Credits</router-link> |
