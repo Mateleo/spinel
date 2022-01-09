@@ -69,7 +69,7 @@ export const useStore = defineStore("main", {
       for (let x = 0; x < select.length; x++) {
         script = script + select[x].name.replaceAll(' ', '').toLowerCase() + " ";
       }
-      return script + " -y;";
+      return script + "-y;";
     },
   },
   actions: {
