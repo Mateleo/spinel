@@ -161,7 +161,7 @@
         "category": "Compression"
     },
     {
-        "name": "qBittorent",
+        "name": "qBittorrent",
         "id": 24,
         "logo": "QBITT.svg",
         "selected": false,
