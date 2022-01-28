@@ -42,7 +42,7 @@ function test() {
   <div class="flex justify-center flex-col">
     <button
       @click="test"
-      class="m-auto bg-yellow-500 rounded-2xl p-3 font-bold text-2xl shadow-lg group hover:outline hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 transition-all ease-in duration-75"
+      class="m-auto bg-yellow-500 rounded-2xl p-3 font-bold text-2xl shadow-lg group hover:outline hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 hover:text-white transition-all ease-in duration-75"
     >
       GENERATE
     </button>
@@ -69,15 +69,15 @@ function test() {
     <h2 class="font-dmserif text-3xl">How to use it ? 🤔</h2>
     <p class="font-dm text-lg mt-1">
       First open PowerShell in
-      <span
-        class=" underline underline-offset-1 decoration-sky-500 decoration-2"
+      <span class="underline underline-offset-1 decoration-sky-500 decoration-2"
         >administrator</span
-      >. You can do it by pressing <kbd>Windows</kbd> + <kbd>R</kbd>, type <span class="font-semibold italic">powershell</span>  and
-      press <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>.<br />
+      >. You can do it by pressing <kbd>Windows</kbd> + <kbd>R</kbd>, type
+      <span class="font-semibold italic">powershell</span> and press <kbd>CTRL</kbd> +
+      <kbd>Shift</kbd> + <kbd>Enter</kbd>.<br />
       Then copy the script. You can do it by clicking on the clipboard icon on the right.
       <br />
-      Finally paste it using <kbd>CTRL</kbd> + <kbd>V</kbd> or right click with your mouse.
-      It's done ! 🎉
+      Finally paste it using <kbd>CTRL</kbd> + <kbd>V</kbd> or right click with your
+      mouse. It's done ! 🎉
     </p>
   </div>
 </template>

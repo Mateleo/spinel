@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-<div class="mt-6 mb-0">
+<footer class="mt-6 mb-0">
   <div class="hidden sm:grid sm:grid-cols-4 font-dm text-base">
-    <p>v 1.0.0</p>
+    <p>v 1.0.1</p>
     <p class="text-center col-span-2">
       &copy; 2022 <router-link to="/">Spinel.ovh</router-link> | All rights reserved |
       <router-link to="/legal">Legal</router-link> |
@@ -15,11 +15,11 @@
   </div>
   <div>
     <p class="text-base font-dm text-center sm:hidden">
-      v 1.0.0 | &copy; 2022 <router-link to="/">Spinel.ovh</router-link> |
+      v 1.0.1 | &copy; 2022 <router-link to="/">Spinel.ovh</router-link> |
       <router-link to="/legal">Legal</router-link> |
       <router-link to="/credits">Credits</router-link> |
       <a href="https://github.com/Mateleo/spinel" class="text-right">Github</a>
     </p>
   </div>
-  </div>
+  </footer>
 </template>
