@@ -71,6 +71,7 @@
     },
     {
         "name": "Notepad++",
+        "package": "Notepadplusplus",
         "id": 11,
         "logo": "NOTEPAD.svg",
         "selected": false,
@@ -113,6 +114,7 @@
     },
     {
         "name": "Epic Games Store",
+        "package": "epicgameslauncher",
         "id": 17,
         "logo": "EPIC.svg",
         "selected": false,

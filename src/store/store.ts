@@ -2,9 +2,10 @@ import { defineStore } from "pinia";
 import json from "../../software.json";
 
 interface software {
-  name: String;
+  name: string;
+  package?: string,
   id: number;
-  logo: String;
+  logo: string;
   selected: boolean;
   category:
     | "Web"
@@ -67,7 +68,13 @@ export const useStore = defineStore("main", {
       let script =
         "Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));choco install ";
       for (let x = 0; x < select.length; x++) {
+        if(select[x].package!=undefined){
+          script = script + select[x].package.replaceAll(' ', '').toLowerCase() + " ";
+        }
+        else{
         script = script + select[x].name.replaceAll(' ', '').toLowerCase() + " ";
+
+        }
       }
       return script + "-y;";
     },
