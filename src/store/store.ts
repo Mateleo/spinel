@@ -3,7 +3,7 @@ import json from "../../software.json";
 
 interface software {
   name: string;
-  package?: string,
+  package?: string;
   id: number;
   logo: string;
   selected: boolean;
@@ -22,7 +22,7 @@ export const useStore = defineStore("main", {
   state: () => ({
     softwareList: json as software[],
     category: 8,
-    search : "",
+    search: "",
   }),
   getters: {
     getCategory() {
@@ -41,9 +41,7 @@ export const useStore = defineStore("main", {
       return state.softwareList;
     },
     getSelected(state) {
-      return state.softwareList.filter(
-        (softwareList) => softwareList.selected === true
-      );
+      return state.softwareList.filter((softwareList) => softwareList.selected === true);
     },
     getByCategory(state) {
       return (cat: string | undefined) =>
@@ -51,14 +49,14 @@ export const useStore = defineStore("main", {
           .filter((softwareList) => softwareList.category === cat)
           .sort((a, b) => a.id - b.id);
     },
-    getByCategorySearch(state){
-      let regex = new RegExp(state.search,"gim")
-      state.search.length===0 ? regex = /./gim : "";
+    getByCategorySearch(state) {
+      let regex = new RegExp(state.search, "gim");
+      state.search.length === 0 ? (regex = /./gim) : "";
       return (cat: string | undefined) =>
-      state.softwareList
-        .filter((softwareList) => softwareList.category === cat)
-        .filter((softwareList) => softwareList.name.match(regex))
-        .sort((a, b) => a.id - b.id);
+        state.softwareList
+          .filter((softwareList) => softwareList.category === cat)
+          .filter((softwareList) => softwareList.name.match(regex))
+          .sort((a, b) => a.id - b.id);
     },
     getScript() {
       let select = this.getSelected;
@@ -68,12 +66,11 @@ export const useStore = defineStore("main", {
       let script =
         "Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));choco install ";
       for (let x = 0; x < select.length; x++) {
-        if(select[x].package!=undefined){
-          script = script + select[x].package.replaceAll(' ', '').toLowerCase() + " ";
-        }
-        else{
-        script = script + select[x].name.replaceAll(' ', '').toLowerCase() + " ";
-
+        if (select[x].package) {
+          //@ts-ignore
+          script = script + select[x].package.replaceAll(" ", "").toLowerCase() + " ";
+        } else {
+          script = script + select[x].name.replaceAll(" ", "").toLowerCase() + " ";
         }
       }
       return script + "-y;";
@@ -119,8 +116,8 @@ export const useStore = defineStore("main", {
           : "";
       }
     },
-    setSearch(word:string|undefined){
-      word == undefined ? this.search="" : this.search = word
-    }
+    setSearch(word: string | undefined) {
+      word == undefined ? (this.search = "") : (this.search = word);
+    },
   },
 });
