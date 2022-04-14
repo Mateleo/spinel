@@ -8,7 +8,7 @@ import Footer from "./Footer.vue";
     <div class="w-full">
       <h1 class="font-dmserif text-7xl text-center mb-5">Spinel</h1>
       <p class="text-xl sm:text-2xl text-justify">
-        All your software, without any installer. 
+        All your softwares, without any installer. 
         <span class="font-semibold underline decoration-sky-500">Custom</span> &
         <span class="font-semibold underline decoration-green-500"
           >Homemade</span
