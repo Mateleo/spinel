@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     shim: false,
   },
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: { name: "layout", mode: "out-in" },
   },
+  experimental: {
+    viewTransition: true
+  }
 });

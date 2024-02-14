@@ -21,6 +21,8 @@ useSeoMeta({
   appleMobileWebAppTitle: "Spinel",
 });
 </script>
+
+
 <template>
   <NuxtLayout>
     <NuxtPage />
@@ -39,12 +41,12 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: "DM SANS";
 }
-.page-enter-active,
-.page-leave-active {
+.layout-enter-active,
+.layout-leave-active {
   transition: all 0.2s ease-in;
 }
-.page-enter-from,
-.page-leave-to {
+.layout-enter-from,
+.layout-leave-to {
   opacity: 0;
   filter: blur(0.5rem);
 }

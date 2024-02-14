@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 const searchInput = ref("");
+const display = ref(false);
+const globalState = useState<number>("global");
+const softwareString = useState<string[]>("softwareString", () => []);
 
 const filteredItems = computed(() => {
   if (!searchInput.value.trim()) {
@@ -8,12 +11,16 @@ const filteredItems = computed(() => {
     return items.filter((item) => item.name.toLowerCase().includes(searchInput.value.toLowerCase()));
   }
 });
+
+function generate() {
+  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\nchoco install ${softwareString.value.join(" ")} -y"`;
+}
 </script>
 <template>
   <div>
     <main class="">
       <h1 class="font-['DM_Serif_Display'] text-6xl text-center">Spinel</h1>
-      <p class="text-lg sm:text-2xl text-justify mt-5">
+      <p class="m:text-2xl text-justify mt-5">
         All your software, without any installer.
         <span class="font-semibold underline decoration-sky-500">Custom</span> &
         <span class="font-semibold underline decoration-green-500">Homemade</span>
@@ -51,6 +58,57 @@ const filteredItems = computed(() => {
           </div>
         </div>
       </div>
+      <div class="flex flex-col" v-if="globalState > 0">
+        <button
+          @click="display = true"
+          class="mt-12 m-auto bg-yellow-500 rounded-2xl px-4 py-2 font-bold text-xl shadow-lg group hover:outline hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 hover:text-white transition-all ease-in duration-75"
+        >
+          GENERATE
+        </button>
+        <div v-if="display" class="shadow-lg mt-4 flex-col">
+          <div class="bg-green-600 p-1 rounded-t-md"></div>
+          <div class="flex float-right flex-row-reverse items-center">
+            <button
+              class="bg-gray-400 size-9 p-1 m-2 focus:bg-white rounded-md hover:bg-gray-300 border-2 border-white focus:border-green-600 focus:outline-none transition-all ease-in"
+            >
+              <Icon name="mdi:clipboard-outline" class="size-full opacity-80 pointer-events-none"></Icon>
+            </button>
+          </div>
+          <p
+            class="bg-gray-900 text-white font-dm font-light italic text-sm md:text-sm p-5 rounded-b-md whitespace-pre-line break-words"
+          >
+            {{ generate() }}
+          </p>
+        </div>
+        <div v-if="display" class="shadow-xl p-3 rounded-md bg-white/30 my-5">
+          <h2 class="font-['DM_Serif_Display'] text-3xl">How to use it ? 🤔</h2>
+          <p class="font-dm text-lg mt-1">
+            First open PowerShell in
+            <span class="underline underline-offset-1 decoration-sky-500 decoration-2">administrator</span>. You can do
+            it by pressing <kbd>Windows</kbd> + <kbd>R</kbd>, type
+            <span class="font-semibold italic">powershell</span> and press <kbd>CTRL</kbd> + <kbd>Shift</kbd> +
+            <kbd>Enter</kbd>.<br />
+            Then copy the script. You can do it by clicking on the clipboard icon on the right.
+            <br />
+            Finally paste it using <kbd>CTRL</kbd> + <kbd>V</kbd> or right click with your mouse. It's done ! 🎉
+          </p>
+        </div>
+      </div>
     </main>
   </div>
 </template>
+<style scoped>
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 0 0 rgb(255 255 255 / 70%) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.95em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+</style>

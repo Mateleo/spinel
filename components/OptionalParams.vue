@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-const selected = ref(false);
 const props = defineProps<{ item: item }>();
 const state = useState(props.item.name);
 </script>
@@ -12,9 +11,26 @@ const state = useState(props.item.name);
       </div> -->
     </div>
     <div class="flex flex-col gap-1">
-      <div v-for="param in props.item.params" class="flex gap-2 items-start">
-        <div class="mt-[2px]">
-          <input type="checkbox" name="" id="test" value="" class="accent-blue-600" />
+      <div @click="" v-for="param in props.item.params" class="flex gap-2 items-start">
+        <div class="mt-[3px] flex gap-2">
+          <input
+            type="checkbox"
+            :id="param.name"
+            value=""
+            class="relative peer shrink-0 accent-blue-600 appearance-none size-5 border-2 rounded-sm bg-white/50 shadow-sm shadow-black/30 border-white/60 checked:bg-blue-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-blue-100 "
+          />
+          <svg
+            class="absolute size-5 hidden peer-checked:block text-white/80 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
         </div>
         <p>
           <span class="font-semibold">{{ param.name }}</span> {{ param.description }}
