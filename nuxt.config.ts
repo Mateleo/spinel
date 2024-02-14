@@ -11,4 +11,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
 });

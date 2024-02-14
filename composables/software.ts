@@ -22,13 +22,6 @@ export const items: item[] = [
     chocoName: "firefox",
     iconName: "logos:firefox",
     category: "web",
-    params: [
-      {
-        name: "/l:",
-        description: "Install given Firefox locale. See the official page for a complete list of available locales.",
-        choices: true,
-      },
-    ],
   },
   {
     name: "Parsec",
@@ -39,7 +32,7 @@ export const items: item[] = [
       {
         name: "/Shared",
         description:
-          "Use the same Parsec account fo all users on this computer and allow access on th Windows login scren. Use this for Team Computers.",
+          "Use the same Parsec account fo all users on this computer and allow access on the Windows login scren. Use this for Team Computers.",
         choices: false,
       },
       {

@@ -11,7 +11,7 @@ const filteredItems = computed(() => {
 </script>
 <template>
   <div>
-    <main class="bg-white/20 rounded-2xl p-6 mt-12 flex flex-col">
+    <main class="">
       <h1 class="font-['DM_Serif_Display'] text-6xl text-center">Spinel</h1>
       <p class="text-lg sm:text-2xl text-justify mt-5">
         All your software, without any installer.
@@ -38,6 +38,14 @@ const filteredItems = computed(() => {
                 >
                   <Card :item="item"></Card>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div v-if="filteredItems.find((e) => e.params)">
+            <h2 class="font-bold text-xl my-2">Optional Params:</h2>
+            <div class="flex gap-6 flex-col">
+              <div v-for="item in filteredItems.filter((e) => e.params)">
+                <OptionalParams :item="item"></OptionalParams>
               </div>
             </div>
           </div>
