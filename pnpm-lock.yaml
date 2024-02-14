@@ -28,6 +28,9 @@ devDependencies:
   '@nuxtjs/tailwindcss':
     specifier: ^6.11.4
     version: 6.11.4
+  nuxt-icon:
+    specifier: ^0.6.8
+    version: 0.6.8(nuxt@3.10.1)(vite@5.1.1)(vue@3.4.19)
 
 packages:
 
@@ -827,6 +830,12 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
+  /@iconify/collections@1.0.395:
+    resolution: {integrity: sha512-NwzLrvQDEAsXpCwRGzI6uSE6gJT5u1/AZLPRPRSqTIOym5NRahpQL/VTFUH8DU0YVWVj6ulfxlHdtAz6lp38Rg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
@@ -843,6 +852,15 @@ packages:
       mlly: 1.5.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@iconify/vue@4.1.1(vue@3.4.19):
+    resolution: {integrity: sha512-RL85Bm/DAe8y6rT6pux7D2FJSiUEM/TPfyK7GrbAOfTSwrhvwJW+S5yijdGcmtXouA8MtuH9C7l4hiSE4mLMjg==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.4.19
     dev: true
 
   /@ioredis/commands@1.2.0:
@@ -5012,6 +5030,21 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
+
+  /nuxt-icon@0.6.8(nuxt@3.10.1)(vite@5.1.1)(vue@3.4.19):
+    resolution: {integrity: sha512-6eWlNOb6Uvp63uXFdhcmsB1JlubDv76Pot/VwmIu0yJxDYhwytbnv3WAjw2khl2l7W/65V4eMGIEeX9C5Ahxng==}
+    dependencies:
+      '@iconify/collections': 1.0.395
+      '@iconify/vue': 4.1.1(vue@3.4.19)
+      '@nuxt/devtools-kit': 1.0.8(nuxt@3.10.1)(vite@5.1.1)
+      '@nuxt/kit': 3.10.1
+    transitivePeerDependencies:
+      - nuxt
+      - rollup
+      - supports-color
+      - vite
+      - vue
+    dev: true
 
   /nuxt-site-config-kit@2.2.9(vue@3.4.19):
     resolution: {integrity: sha512-K3Pi7OBeztfjTxEpk0kEpbRwyhKQf15MIJQUAeqep9K2RbAdzhSygfpHZUcWc0KL2l0E5qKrvdcM14Gc/9dZdg==}
