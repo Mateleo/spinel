@@ -2,7 +2,7 @@
 const searchInput = ref("");
 const display = ref(false);
 const globalState = useState<number>("global");
-const softwareString = useState<string[]>("softwareString", () => []);
+const softwareString = useState<{ name: string; params: string }[]>("softwareString", () => []);
 
 const filteredItems = computed(() => {
   if (!searchInput.value.trim()) {
@@ -13,7 +13,15 @@ const filteredItems = computed(() => {
 });
 
 function generate() {
-  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\nchoco install ${softwareString.value.join(" ")} -y"`;
+  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\nchoco install ${softwareString.value.map(
+    (e) => {
+      if (e.params.length > 0) {
+        return `${e.name} --params\"${e.params}\"`;
+      } else {
+        return `${e.name}`;
+      }
+    }
+  ).join(' ')} -y"`;
 }
 </script>
 <template>
