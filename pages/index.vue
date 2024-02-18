@@ -12,6 +12,9 @@ const filteredItems = computed(() => {
   }
 });
 
+const source = ref('Hello')
+const { text, copy, copied, isSupported } = useClipboard({source})
+
 function generate() {
   return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\nchoco install ${softwareString.value.map(
     (e) => {
@@ -21,14 +24,14 @@ function generate() {
         return `${e.name}`;
       }
     }
-  ).join(' ')} -y"`;
+  ).join(' ')} -y`;
 }
 </script>
 <template>
   <div>
     <main class="">
       <h1 class="font-['DM_Serif_Display'] text-6xl text-center">Spinel</h1>
-      <p class="m:text-2xl text-justify mt-5">
+      <p class="md:text-2xl text-justify mt-5">
         All your software, without any installer.
         <span class="font-semibold underline decoration-sky-500">Custom</span> &
         <span class="font-semibold underline decoration-green-500">Homemade</span>
@@ -77,6 +80,7 @@ function generate() {
           <div class="bg-green-600 p-1 rounded-t-md"></div>
           <div class="flex float-right flex-row-reverse items-center">
             <button
+            @click="copy(generate())"
               class="bg-gray-400 size-9 p-1 m-2 focus:bg-white rounded-md hover:bg-gray-300 border-2 border-white focus:border-green-600 focus:outline-none transition-all ease-in"
             >
               <Icon name="mdi:clipboard-outline" class="size-full opacity-80 pointer-events-none"></Icon>

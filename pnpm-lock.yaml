@@ -28,6 +28,9 @@ devDependencies:
   '@nuxtjs/tailwindcss':
     specifier: ^6.11.4
     version: 6.11.4
+  '@vueuse/nuxt':
+    specifier: ^10.7.2
+    version: 10.7.2(nuxt@3.10.1)(vue@3.4.19)
   nuxt-icon:
     specifier: ^0.6.8
     version: 0.6.8(nuxt@3.10.1)(vite@5.1.1)(vue@3.4.19)

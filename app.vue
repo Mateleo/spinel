@@ -20,6 +20,7 @@ useSeoMeta({
   mobileWebAppCapable: "yes",
   appleMobileWebAppTitle: "Spinel",
 });
+
 </script>
 
 
