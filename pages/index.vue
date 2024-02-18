@@ -12,19 +12,23 @@ const filteredItems = computed(() => {
   }
 });
 
-const source = ref('Hello')
-const { text, copy, copied, isSupported } = useClipboard({source})
+const source = ref("Hello");
+const { text, copy, copied, isSupported } = useClipboard({ source });
 
 function generate() {
-  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\n${softwareString.value.map(
-    (e) => {
+  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\n${softwareString.value
+    .map((e, index) => {
       if (e.params.length > 0) {
-        return `choco install ${e.name} --params \"${e.params}\" -y;`;
+        return `${index !== 0 ? "-y ;" : ""}choco install ${e.name} --params \"${
+          e.params
+        }\" -y; ${index !== softwareString.value.length - 1 ? "choco install " : ""}`;
+      } else if (index == 0) {
+        return `choco install ${e.name}${index === softwareString.value.length - 1 ? " -y" : ""}`;
       } else {
-        return `choco install ${e.name} -y;`;
+        return `${e.name}${index === softwareString.value.length - 1 ? " -y" : ""}`;
       }
-    }
-  ).join(' ')}`;
+    })
+    .join(" ")}`;
 }
 </script>
 <template>
@@ -80,7 +84,7 @@ function generate() {
           <div class="bg-green-600 p-1 rounded-t-md"></div>
           <div class="flex float-right flex-row-reverse items-center">
             <button
-            @click="copy(generate())"
+              @click="copy(generate())"
               class="bg-gray-400 size-9 p-1 m-2 focus:bg-white rounded-md hover:bg-gray-300 border-2 border-white focus:border-green-600 focus:outline-none transition-all ease-in"
             >
               <Icon name="mdi:clipboard-outline" class="size-full opacity-80 pointer-events-none"></Icon>

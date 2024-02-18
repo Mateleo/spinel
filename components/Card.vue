@@ -18,10 +18,10 @@ selected.value = state.value;
         : (stringSoftware = stringSoftware.filter((e) => e.name !== props.item.chocoName));
     "
     :class="selected ? 'ring-yellow-300 ring-4' : ''"
-    class="bg-gradient-to-b from-slate-500 to-slate-800 flex flex-col items-center px-2 pt-2 rounded-lg shadow-md shadow-black/30 w-[88px] h-[115px] text-white hover:text-black transition-all ease-in hover:shadow-black/60 hover:from-slate-200 hover:to-slate-400"
+    class="bg-gradient-to-b from-slate-700 to-slate-800 flex flex-col items-center px-2 pt-2 rounded-lg shadow-md shadow-black/30 w-[88px] h-[115px] text-white hover:text-black transition-all ease-in hover:shadow-black/60 hover:from-slate-200 hover:to-slate-400"
   >
     <div class="size-12 flex items-center justify-center p-1">
-      <Icon :name="props.item.iconName" class="size-full"></Icon>
+      <Icon :name="props.item.iconName" class="size-full contrast-125" :color="props.item.iconColor" :class="props.item.iconFlip ? '-scale-x-100' : ''"></Icon>
     </div>
     <p
       class="font-semibold leading-4"
