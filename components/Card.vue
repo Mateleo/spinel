@@ -17,8 +17,8 @@ selected.value = state.value;
         ? stringSoftware.push({ name: props.item.chocoName, params: '' })
         : (stringSoftware = stringSoftware.filter((e) => e.name !== props.item.chocoName));
     "
-    :class="selected ? 'ring-yellow-300 ring-4 shadow-yellow-500/20 shadow-inner' : 'shadow-md shadow-black/30'"
-    class="select-none bg-gradient-to-b from-slate-700 to-slate-800 flex flex-col items-center px-2 pt-2 rounded-lg w-[88px] h-[115px] text-white hover:text-black transition-all ease-in hover:shadow-black/60 hover:from-slate-200 hover:to-slate-400 focus:ring-4 focus:ring-white"
+    :class="selected ? 'ring-yellow-300 ring-4' : ''"
+    class="select-none bg-gradient-to-b from-slate-700 to-slate-800 flex flex-col items-center px-2 pt-2 rounded-lg shadow-md shadow-black/30 w-[88px] h-[115px] text-white hover:text-black transition-all ease-in hover:shadow-black/60 hover:from-slate-200 hover:to-slate-400 focus:ring-4 focus:ring-white"
   >
     <div class="size-12 flex items-center justify-center p-1">
       <img v-if="props.item.iconName.startsWith('https')" :src="props.item.iconName" class="full contrast-125" />
