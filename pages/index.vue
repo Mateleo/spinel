@@ -20,7 +20,7 @@ function generate() {
     .map((e, index) => {
       if (e.params.length > 0) {
         return `${index !== 0 ? "-y ;" : ""}choco install ${e.name} --params \"${e.params}\" -y; ${
-          index !== softwareString.value.length - 1 ? "choco install " : ""
+          index !== softwareString.value.length - 1 ? "choco install" : ""
         }`;
       } else if (index == 0) {
         return `choco install ${e.name}${index === softwareString.value.length - 1 ? " -y" : ""}`;
