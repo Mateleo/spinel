@@ -24,7 +24,7 @@ selected.value = state.value;
       <Icon :name="props.item.iconName" class="size-full"></Icon>
     </div>
     <p
-      class="font-semibold leading-5"
+      class="font-semibold leading-4"
       :class="Math.max(...props.item.name.split(' ').map((e) => e.length)) > 13 ? 'text-[12px]' : ''"
     >
       {{ props.item.name }}

@@ -16,15 +16,15 @@ const source = ref('Hello')
 const { text, copy, copied, isSupported } = useClipboard({source})
 
 function generate() {
-  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\nchoco install ${softwareString.value.map(
+  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\n${softwareString.value.map(
     (e) => {
       if (e.params.length > 0) {
-        return `${e.name} --params\"${e.params}\"`;
+        return `choco install ${e.name} --params \"${e.params}\" -y;`;
       } else {
-        return `${e.name}`;
+        return `choco install ${e.name} -y;`;
       }
     }
-  ).join(' ')} -y`;
+  ).join(' ')}`;
 }
 </script>
 <template>
