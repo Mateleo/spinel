@@ -19,9 +19,9 @@ function generate() {
   return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\n${softwareString.value
     .map((e, index) => {
       if (e.params.length > 0) {
-        return `${index !== 0 ? "-y ;" : ""}choco install ${e.name} --params \"${
-          e.params
-        }\" -y; ${index !== softwareString.value.length - 1 ? "choco install " : ""}`;
+        return `${index !== 0 ? "-y ;" : ""}choco install ${e.name} --params \"${e.params}\" -y; ${
+          index !== softwareString.value.length - 1 ? "choco install " : ""
+        }`;
       } else if (index == 0) {
         return `choco install ${e.name}${index === softwareString.value.length - 1 ? " -y" : ""}`;
       } else {
@@ -45,29 +45,30 @@ function generate() {
         <input
           v-model="searchInput"
           type="text"
+          name="searchInput"
           class="rounded-md bg-white/40 placeholder:text-black/70 py-2 px-3 text-sm focus:ring-2 focus:ring-sky-500 outline-none placeholder:italic shadow-sm shadow-black/15 mb-2"
           placeholder="Search for an app..."
         />
         <div class="flex flex-col gap-4">
           <div v-for="category in new Set(filteredItems.map((e) => e.category))" class="">
             <div class="bg-white/25 rounded-md p-4 shadow-md shadow-black/10 gap-2 flex flex-col">
-              <h3 class="font-semibold">{{ category.charAt(0).toLocaleUpperCase() + category.slice(1) }}</h3>
+              <h2 class="font-semibold">{{ category.charAt(0).toLocaleUpperCase() + category.slice(1) }}</h2>
               <div class="flex gap-4 flex-wrap">
                 <div
                   v-for="(item, index) in filteredItems.filter((item) => item.category === category)"
                   :key="item.name"
                   class=""
                 >
-                  <Card :item="item"></Card>
+                  <LazyCard :item="item"></LazyCard>
                 </div>
               </div>
             </div>
           </div>
           <div v-if="filteredItems.find((e) => e.params)">
-            <h2 class="font-bold text-xl my-2">Optional Params:</h2>
+            <h3 class="font-bold text-xl my-2">Optional Params:</h3>
             <div class="flex gap-6 flex-col">
               <div v-for="item in filteredItems.filter((e) => e.params)">
-                <OptionalParams :item="item"></OptionalParams>
+                <LazyOptionalParams :item="item"></LazyOptionalParams>
               </div>
             </div>
           </div>

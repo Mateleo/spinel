@@ -21,7 +21,7 @@ selected.value = state.value;
     class="select-none bg-gradient-to-b from-slate-700 to-slate-800 flex flex-col items-center px-2 pt-2 rounded-lg shadow-md shadow-black/30 w-[88px] h-[115px] text-white hover:text-black transition-all ease-in hover:shadow-black/60 hover:from-slate-200 hover:to-slate-400 focus:ring-4 focus:ring-white"
   >
     <div class="size-12 flex items-center justify-center p-1">
-      <img v-if="props.item.iconName.startsWith('https')" :src="props.item.iconName" class="full contrast-125" />
+      <img v-if="props.item.iconName.startsWith('https')" :src="props.item.iconName" class="full contrast-125" :alt="props.item.iconName" />
       <Icon
         v-else
         :name="props.item.iconName"

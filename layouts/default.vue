@@ -5,7 +5,7 @@
     <div class="flex flex-wrap md:grid md:grid-cols-5 mt-12 font-medium text-xs md:text-sm justify-center gap-2">
       <p>v2.0</p>
       <div class="flex justify-center gap-2 col-span-3">
-        <NuxtLink class="hidden md:block">© 2024 Spinel.ovh</NuxtLink> |
+        <NuxtLink to="/" class="hidden md:block">© 2024 Spinel.ovh</NuxtLink> |
         <p>Made by <NuxtLink class="underline" to="https://mateo-siam.com" target="_blank">Mateleo</NuxtLink></p>
         |
         <NuxtLink to="/legal">Legal</NuxtLink>

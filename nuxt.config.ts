@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@nuxtjs/google-fonts",
     "nuxt-icon",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
   ],
   googleFonts: {
     families: {
@@ -22,9 +22,9 @@ export default defineNuxtConfig({
   //   pageTransition: { name: "layout", mode: "out-in" },
   // },
   experimental: {
-    viewTransition: true
+    viewTransition: true,
   },
-  site:{
-    url:"https://spinel.ovh"
-  }
+  site: {
+    url: "https://spinel.ovh",
+  },
 });
