@@ -23,5 +23,8 @@ export default defineNuxtConfig({
   // },
   experimental: {
     viewTransition: true
+  },
+  site:{
+    url:"https://spinel.ovh"
   }
 });
