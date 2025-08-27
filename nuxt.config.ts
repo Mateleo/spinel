@@ -1,30 +1,19 @@
+import tailwindcss from "@tailwindcss/vite";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/robots",
-    "@nuxtjs/sitemap",
-    "@nuxtjs/google-fonts",
-    "nuxt-icon",
-    "@vueuse/nuxt",
-  ],
-  googleFonts: {
-    families: {
-      "DM Serif Display": true,
-      "DM Sans": "300..900",
-    },
+  modules: ["@nuxt/icon", "@nuxt/fonts", "@vueuse/nuxt"],
+  css: ["~/assets/css/main.css"],
+  vite: {
+    plugins: [tailwindcss()],
   },
-  typescript: {
-    shim: false,
-  },
-  // app: {
-  //   pageTransition: { name: "layout", mode: "out-in" },
+  // googleFonts: {
+  //   families: {
+  //     "DM Serif Display": true,
+  //     "DM Sans": "300..900",
+  //   },
   // },
   experimental: {
     viewTransition: true,
-  },
-  site: {
-    url: "https://spinel.ovh",
   },
 });

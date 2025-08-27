@@ -14,7 +14,7 @@ const props = defineProps({
         <p class="text-center font-['DM SANS'] text-2xl">Oops, this page does not exist !</p>
         <div class="flex justify-center">
           <button
-          @click="clearError({ redirect: '/' })"
+            @click="clearError({ redirect: '/' })"
             class="my-5 mt-12 bg-yellow-500 rounded-2xl p-3 font-bold text-xl shadow-lg group hover:outline hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 transition-all ease-in duration-75"
           >
             HOME
