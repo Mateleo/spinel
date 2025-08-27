@@ -5,8 +5,12 @@ const emit = defineEmits<{ "toggle-selection": [chocoName: string] }>();
 <template>
   <button
     @click="emit('toggle-selection', props.item.chocoName)"
-    :class="props.isSelected ? 'ring-yellow-300 ring-4' : ''"
-    class="select-none bg-gradient-to-b from-slate-700 to-slate-800 flex flex-col items-center px-2 pt-2 rounded-lg shadow-md shadow-black/30 w-[92px] h-[120px] text-white hover:text-black transition-all ease-in hover:shadow-black/60 hover:from-slate-200 hover:to-slate-400 focus:ring-4 focus:ring-white gap-1"
+    :class="
+      props.isSelected
+        ? 'ring-blue-400 ring-4 bg-gradient-to-b from-blue-600 to-blue-800'
+        : 'bg-gradient-to-b from-slate-700 to-slate-900 hover:from-slate-600 hover:to-slate-900'
+    "
+    class="select-none flex flex-col items-center px-3 pt-3 rounded-lg shadow-lg shadow-black/40 w-[100px] h-[130px] text-white hover:text-white transition-all ease-in-out hover:shadow-xl hover:scale-105 gap-2"
   >
     <div class="size-12 flex items-center justify-center p-1">
       <img

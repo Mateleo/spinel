@@ -55,7 +55,7 @@ function generate() {
   <div>
     <main class="">
       <h1 class="font-['DM_Serif_Display'] text-6xl text-center">Spinel</h1>
-      <p class="md:text-2xl text-justify mt-5">
+      <p class="md:text-2xl text-center mt-5">
         All your software, without any installer.
         <span class="font-semibold underline decoration-sky-500">Custom</span> &
         <span class="font-semibold underline decoration-green-500">Homemade</span>
@@ -66,13 +66,17 @@ function generate() {
           v-model="searchInput"
           type="text"
           name="searchInput"
-          class="rounded-md bg-white/40 placeholder:text-black/70 py-2 px-3 text-sm focus:ring-2 focus:ring-sky-500 outline-none placeholder:italic shadow-sm shadow-black/15 mb-2"
+          class="rounded-xl bg-white/50 backdrop-blur-sm placeholder:text-black/70 py-3 px-4 text-sm focus:ring-2 focus:ring-blue-500 outline-none placeholder:italic shadow-lg shadow-black/20 mb-2 border border-white/20 transition-all duration-200 hover:bg-white/60"
           placeholder="Search for an app..."
         />
         <div class="flex flex-col gap-4">
           <div v-for="category in new Set(filteredItems.map((e) => e.category))" class="">
-            <div class="bg-white/25 rounded-md p-4 shadow-md shadow-black/10 gap-2 flex flex-col">
-              <h2 class="font-semibold">{{ category.charAt(0).toLocaleUpperCase() + category.slice(1) }}</h2>
+            <div
+              class="bg-white/30 backdrop-blur-sm rounded-xl p-6 shadow-xl shadow-black/20 gap-3 flex flex-col border border-white/20"
+            >
+              <h2 class="font-semibold text-lg text-black/80">
+                {{ category.charAt(0).toLocaleUpperCase() + category.slice(1) }}
+              </h2>
               <div class="flex gap-4 flex-wrap">
                 <div
                   v-for="(item, index) in filteredItems.filter((item) => item.category === category)"
@@ -105,12 +109,12 @@ function generate() {
       <div class="flex flex-col" v-if="globalCount > 0">
         <button
           @click="display = true"
-          class="mt-12 m-auto bg-yellow-500 rounded-2xl px-4 py-2 font-bold text-xl shadow-lg group hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 hover:text-white transition-all ease-in duration-75"
+          class="mt-12 m-auto bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl px-8 py-3 font-bold text-xl shadow-xl group hover:shadow-2xl hover:scale-105 transition-all ease-in duration-200 border border-white/20 backdrop-blur-sm"
         >
           GENERATE
         </button>
-        <div v-if="display" class="shadow-lg mt-4 flex-col">
-          <div class="bg-green-600 p-1 rounded-t-md"></div>
+        <div v-if="display" class="shadow-2xl mt-4 flex-col rounded-xl overflow-hidden border border-white/20">
+          <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-2 rounded-t-xl"></div>
           <div class="flex float-right flex-row-reverse items-center">
             <button
               @click="copy(generate())"
@@ -136,8 +140,8 @@ function generate() {
             {{ generate() }}
           </p>
         </div>
-        <div v-if="display" class="shadow-xl p-3 rounded-md bg-white/30 my-5">
-          <h2 class="font-['DM_Serif_Display'] text-3xl">How to use it ? 🤔</h2>
+        <div v-if="display" class="shadow-2xl p-6 rounded-xl bg-white/40 backdrop-blur-sm my-5 border border-white/30">
+          <h2 class="font-['DM_Serif_Display'] text-3xl text-black/80">How to use it ? 🤔</h2>
           <p class="font-dm text-lg mt-1">
             First open PowerShell in
             <span class="underline underline-offset-1 decoration-sky-500 decoration-2">administrator</span>. You can do
