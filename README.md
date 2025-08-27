@@ -10,14 +10,14 @@
 ## ✨ Features
 
 - **🎨 Beautiful Interface**: Modern, clean design with intuitive user experience
-- **⚡ Fast Performance**: Built with Nuxt 4 for the ultimate flex.
+- **⚡ Fast Performance**: Built with Nuxt 4 and Tailwind.
 - **📦 Chocolatey Integration**: Seamless script generation for package management
 - **🔧 Customizable Options**: Flexible parameters for tailored script creation
 - **📱 Responsive Design**: Works perfectly on desktop and mobile devices
 
 ## 📸 Preview
 
-![preview image](.\public\img\preview2.png)
+![preview image](./public/img/preview2.png)
 
 ## 🛠️ Installation & Usage
 
