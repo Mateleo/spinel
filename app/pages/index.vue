@@ -105,7 +105,7 @@ function generate() {
       <div class="flex flex-col" v-if="globalCount > 0">
         <button
           @click="display = true"
-          class="mt-12 m-auto bg-yellow-500 rounded-2xl px-4 py-2 font-bold text-xl shadow-lg group hover:outline hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 hover:text-white transition-all ease-in duration-75"
+          class="mt-12 m-auto bg-yellow-500 rounded-2xl px-4 py-2 font-bold text-xl shadow-lg group hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 hover:text-white transition-all ease-in duration-75"
         >
           GENERATE
         </button>

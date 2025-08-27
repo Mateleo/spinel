@@ -171,16 +171,13 @@ export const items: item[] = [
   {
     name: "PLEX",
     chocoName: "plex",
-    iconName: "https://static-00.iconduck.com/assets.00/plex-icon-2048x2048-kdgfrhh9.png",
-    iconColor: "#282A2D",
+    iconName: "cbi:plex-alt",
     category: "media",
   },
   {
     name: "OBS Studio",
     chocoName: "obs-studio",
-    iconName:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Open_Broadcaster_Software_Logo.png/1200px-Open_Broadcaster_Software_Logo.png",
-    iconColor: "#282A2D",
+    iconName: "simple-icons:obsstudio",
     category: "media",
   },
   {
