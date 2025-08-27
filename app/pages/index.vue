@@ -114,9 +114,20 @@ function generate() {
           <div class="flex float-right flex-row-reverse items-center">
             <button
               @click="copy(generate())"
-              class="bg-gray-400 size-9 p-1 m-2 focus:bg-white rounded-md hover:bg-gray-300 border-2 border-white focus:border-green-600 focus:outline-none transition-all ease-in"
+              class="group relative bg-slate-800 hover:bg-slate-700 text-white size-8 p-2 m-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 ease-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 flex flex-col items-center justify-center"
+              :title="copied ? 'Copied!' : 'Copy to clipboard'"
             >
-              <Icon name="mdi:clipboard-outline" class="size-full opacity-80 pointer-events-none"></Icon>
+              <Icon
+                :name="copied ? 'mdi:check' : 'mdi:clipboard-outline'"
+                class="size-full transition-colors duration-200"
+                :class="copied ? 'text-green-400' : 'text-slate-300 group-hover:text-white'"
+              />
+              <span
+                v-if="copied"
+                class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded opacity-75 whitespace-nowrap"
+              >
+                Copied!
+              </span>
             </button>
           </div>
           <p

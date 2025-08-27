@@ -11,7 +11,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   themeColor: "#f65e28",
   ogType: "website",
-  ogUrl: "https://spinel.4esport.fr",
+  ogUrl: "https://spinel.ovh",
   msapplicationTileColor: "#F36C28",
   author: "Mateleo",
   ogSiteName: "Spinel",
