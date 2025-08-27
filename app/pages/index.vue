@@ -1,8 +1,12 @@
 <script lang="ts" setup>
+import { items } from "~/composables/software";
+
 const searchInput = ref("");
 const display = ref(false);
-const globalState = useState<number>("global");
-const softwareString = useState<{ name: string; params: string }[]>("softwareString", () => []);
+const selectedItems = ref<Set<string>>(new Set());
+const selectedParams = ref<Map<string, string>>(new Map());
+
+const globalCount = computed(() => selectedItems.value.size);
 
 const filteredItems = computed(() => {
   if (!searchInput.value.trim()) {
@@ -15,17 +19,33 @@ const filteredItems = computed(() => {
 const source = ref("Hello");
 const { text, copy, copied, isSupported } = useClipboard({ source });
 
+function toggleSelection(chocoName: string) {
+  if (selectedItems.value.has(chocoName)) {
+    selectedItems.value.delete(chocoName);
+    selectedParams.value.delete(chocoName);
+  } else {
+    selectedItems.value.add(chocoName);
+    selectedParams.value.set(chocoName, "");
+  }
+}
+
+function updateParams({ name, params }: { name: string; params: string }) {
+  selectedParams.value.set(name, params);
+}
+
 function generate() {
-  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\n${softwareString.value
-    .map((e, index) => {
-      if (e.params.length > 0) {
-        return `${index !== 0 ? "-y ;" : ""}choco install ${e.name} --params \"${e.params}\" -y; ${
-          index !== softwareString.value.length - 1 ? "choco install" : ""
+  const selectedList = Array.from(selectedItems.value);
+  return `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));\n${selectedList
+    .map((name, index) => {
+      const params = selectedParams.value.get(name) || "";
+      if (params.length > 0) {
+        return `${index !== 0 ? "-y ;" : ""}choco install ${name} --params \"${params}\" -y; ${
+          index !== selectedList.length - 1 ? "choco install" : ""
         }`;
       } else if (index == 0) {
-        return `choco install ${e.name}${index === softwareString.value.length - 1 ? " -y" : ""}`;
+        return `choco install ${name}${index === selectedList.length - 1 ? " -y" : ""}`;
       } else {
-        return `${e.name}${index === softwareString.value.length - 1 ? " -y" : ""}`;
+        return `${name}${index === selectedList.length - 1 ? " -y" : ""}`;
       }
     })
     .join(" ")}`;
@@ -59,22 +79,30 @@ function generate() {
                   :key="item.name"
                   class=""
                 >
-                  <LazyCard :item="item"></LazyCard>
+                  <LazyCard
+                    :item="item"
+                    :is-selected="selectedItems.has(item.chocoName)"
+                    @toggle-selection="toggleSelection"
+                  ></LazyCard>
                 </div>
               </div>
             </div>
           </div>
-          <div v-if="filteredItems.find((e) => e.params)">
+          <div v-if="filteredItems.find((e) => e.params && selectedItems.has(e.chocoName))">
             <h3 class="font-bold text-xl my-2">Optional Params:</h3>
             <div class="flex gap-6 flex-col">
-              <div v-for="item in filteredItems.filter((e) => e.params)">
-                <LazyOptionalParams :item="item"></LazyOptionalParams>
+              <div v-for="item in filteredItems.filter((e) => e.params && selectedItems.has(e.chocoName))">
+                <LazyOptionalParams
+                  :item="item"
+                  :current-params="selectedParams.get(item.chocoName) || ''"
+                  @update-params="updateParams"
+                ></LazyOptionalParams>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex flex-col" v-if="globalState > 0">
+      <div class="flex flex-col" v-if="globalCount > 0">
         <button
           @click="display = true"
           class="mt-12 m-auto bg-yellow-500 rounded-2xl px-4 py-2 font-bold text-xl shadow-lg group hover:outline hover:outline-4 hover:outline-red-200 hover:bg-gradient-to-br hover: from-fuchsia-600 hover:to-orange-600 hover:text-white transition-all ease-in duration-75"

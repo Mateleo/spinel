@@ -1,11 +1,19 @@
 <script lang="ts" setup>
 const params = ref<string[]>([]);
-const props = defineProps<{ item: item }>();
-const state = useState(props.item.name);
-const softwareString = useState<{ name: string; params: string }[]>("softwareString");
+const props = defineProps<{ item: item; currentParams: string }>();
+const emit = defineEmits<{ "update-params": [data: { name: string; params: string }] }>();
+
+// Sync params with currentParams
+watch(
+  () => props.currentParams,
+  (newParams) => {
+    params.value = newParams.split(" ").filter(Boolean);
+  },
+  { immediate: true }
+);
 </script>
 <template>
-  <div class="flex flex-col" v-if="state && props.item.params">
+  <div class="flex flex-col" v-if="props.item.params">
     <div class="flex items-center gap-2">
       <p class="font-medium text-lg underline">{{ props.item.name }}:</p>
     </div>
@@ -14,11 +22,10 @@ const softwareString = useState<{ name: string; params: string }[]>("softwareStr
         <div class="mt-[3px] flex gap-2">
           <input
             @click="
-              params.includes(param.name) ? params = params.filter((e) => e !== param.name) : params.push(param.name);
-              softwareString.find((e) => e.name === props.item.chocoName)
-                ? (softwareString[softwareString.findIndex((e) => e.name === props.item.chocoName)].params = params.join(' '))
-                : '';
+              params.includes(param.name) ? (params = params.filter((e) => e !== param.name)) : params.push(param.name);
+              emit('update-params', { name: props.item.chocoName, params: params.join(' ') });
             "
+            :checked="params.includes(param.name)"
             type="checkbox"
             :id="param.name"
             value=""
