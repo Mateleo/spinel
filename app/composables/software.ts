@@ -87,9 +87,9 @@ export const items: item[] = [
     category: "dev",
   },
   {
-    name: "Python Latest",
-    chocoName: "python",
-    iconName: "logos:python",
+    name: "uv",
+    chocoName: "uv",
+    iconName: "material-icon-theme:uv",
     category: "dev",
   },
   {
