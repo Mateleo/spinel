@@ -35,7 +35,7 @@ export const items: item[] = [
     name: "Opera GX",
     chocoName: "opera-gx",
     iconName: "simple-icons:operagx",
-    iconColor: "#FA1E4E",
+    iconColor: "#e94057",
     category: "web",
   },
   {
@@ -87,9 +87,9 @@ export const items: item[] = [
     category: "dev",
   },
   {
-    name: "Python Latest",
-    chocoName: "python",
-    iconName: "logos:python",
+    name: "uv",
+    chocoName: "uv",
+    iconName: "material-icon-theme:uv",
     category: "dev",
   },
   {
@@ -171,16 +171,13 @@ export const items: item[] = [
   {
     name: "PLEX",
     chocoName: "plex",
-    iconName: "https://static-00.iconduck.com/assets.00/plex-icon-2048x2048-kdgfrhh9.png",
-    iconColor: "#282A2D",
+    iconName: "cbi:plex-alt",
     category: "media",
   },
   {
     name: "OBS Studio",
     chocoName: "obs-studio",
-    iconName:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Open_Broadcaster_Software_Logo.png/1200px-Open_Broadcaster_Software_Logo.png",
-    iconColor: "#282A2D",
+    iconName: "simple-icons:obsstudio",
     category: "media",
   },
   {
@@ -289,5 +286,23 @@ export const items: item[] = [
     iconName: "https://cdn.icon-icons.com/icons2/3053/PNG/512/gog_galaxy_alt_macos_bigsur_icon_190150.png",
     iconColor: "#9650D1",
     category: "games",
+  },
+  {
+    name: "Termius",
+    chocoName: "termius",
+    iconName: "simple-icons:termius",
+    category: "tools",
+  },
+  {
+    name: "Tailscale",
+    chocoName: "tailscale",
+    iconName: "simple-icons:tailscale",
+    category: "tools",
+  },
+  {
+    name: "yt-dlp",
+    chocoName: "yt-dlp",
+    iconName: "https://upload.wikimedia.org/wikipedia/commons/3/38/Yt-dlp_logo.svg",
+    category: "media",
   },
 ];

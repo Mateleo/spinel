@@ -11,7 +11,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   themeColor: "#f65e28",
   ogType: "website",
-  ogUrl: "https://spinel.4esport.fr",
+  ogUrl: "https://spinel.ovh",
   msapplicationTileColor: "#F36C28",
   author: "Mateleo",
   ogSiteName: "Spinel",
@@ -23,19 +23,17 @@ useSeoMeta({
 
 useHead({
   htmlAttrs: {
-    lang: 'en'
+    lang: "en",
   },
   link: [
     {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png'
-    }
-  ]
-})
-
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.png",
+    },
+  ],
+});
 </script>
-
 
 <template>
   <NuxtLayout>
@@ -53,7 +51,7 @@ body {
     #e94057,
     #8a2387
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: "DM SANS";
+  font-family: "Inter", sans-serif;
 }
 .layout-enter-active,
 .layout-leave-active {
