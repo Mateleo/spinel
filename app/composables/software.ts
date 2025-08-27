@@ -35,7 +35,7 @@ export const items: item[] = [
     name: "Opera GX",
     chocoName: "opera-gx",
     iconName: "simple-icons:operagx",
-    iconColor: "#FA1E4E",
+    iconColor: "#e94057",
     category: "web",
   },
   {
@@ -286,5 +286,23 @@ export const items: item[] = [
     iconName: "https://cdn.icon-icons.com/icons2/3053/PNG/512/gog_galaxy_alt_macos_bigsur_icon_190150.png",
     iconColor: "#9650D1",
     category: "games",
+  },
+  {
+    name: "Termius",
+    chocoName: "termius",
+    iconName: "simple-icons:termius",
+    category: "tools",
+  },
+  {
+    name: "Tailscale",
+    chocoName: "tailscale",
+    iconName: "simple-icons:tailscale",
+    category: "tools",
+  },
+  {
+    name: "yt-dlp",
+    chocoName: "yt-dlp",
+    iconName: "https://upload.wikimedia.org/wikipedia/commons/3/38/Yt-dlp_logo.svg",
+    category: "media",
   },
 ];

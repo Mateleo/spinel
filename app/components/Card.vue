@@ -18,7 +18,7 @@ const emit = defineEmits<{ "toggle-selection": [chocoName: string] }>();
       <Icon
         v-else
         :name="props.item.iconName"
-        :color="props.item.iconColor"
+        :style="`color: ${props.item.iconColor}`"
         :class="props.item.iconFlip ? '-scale-x-100' : ''"
         size="64"
       ></Icon>
